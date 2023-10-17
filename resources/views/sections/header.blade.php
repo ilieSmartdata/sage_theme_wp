@@ -1,128 +1,45 @@
 <header class="banner">
-  <a class="brand" href="{{ home_url('/') }}">
-    {!! $siteName !!}
-  </a>
 
-  <?php
-  $custom_logo_id = get_theme_mod( 'site_logo' );
+  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
-    $menu = wp_nav_menu([
-        'theme_location' => 'primary_navigation',
-        'menu_class' => 'menu text-xl text-center items-center gap-x-5 pt-4 md:gap-x-4 lg:text-lg lg:flex  lg:pt-0',
-        'container' => false,
-        'echo' => false,
-    ]);
-  ?>
+            <?php
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $logo = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );
 
-  <nav class="nav-primary lg:px-16 px-6 bg-white shadow-md flex flex-wrap items-center lg:py-0 py-2" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
-
-    <div class="flex-1 flex justify-between items-center">{{$custom_logo_id}}</div>
-
-    <label for="menu-toggle" class="cursor-pointer lg:hidden block">
-      <svg
-        class="fill-current text-gray-900"
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-      >
-        <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </label>
-    <input class="hidden" type="checkbox" id="menu-toggle" />
-
-
-  @if ($menu)
-      <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-        <nav>
-      {!! $menu !!}
-        </nav>
+            if ( has_custom_logo() ) {
+              echo '<a href="'.site_url().'" class="flex items-center" ><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" class="h-12 mr-3"></a>';
+            } else {
+              echo '<a href="'.site_url().'"><h1>'. get_bloginfo( 'name' ) .'</h1></a>';
+            }
+            ?>
+      <div class="flex md:order-2">
+        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+        </button>
       </div>
-  @endif
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
 
+        <?php
+            $menu = wp_nav_menu([
+                'theme_location' => 'primary_navigation',
+                'menu_class' => 'flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700',
+                'container' => false,
+                'echo' => false,
+                'depth'         => 1,
+                'fallback_cb'   => false,
+                'add_li_class'  => 'block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700'
+            ]);
+          ?>
+          @if ($menu)
+              {!! $menu !!}
+          @endif
+      </div>
+    </div>
   </nav>
-
-{{--  @if (has_nav_menu('primary_navigation'))--}}
-{{--    <nav class="nav-primary lg:px-16 px-6 bg-white shadow-md flex flex-wrap items-center lg:py-0 py-2" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">--}}
-{{--      {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}--}}
-{{--        <div class="flex-1 flex justify-between items-center">--}}
-{{--          <a href="/" class="flex text-lg font-semibold">--}}
-{{--            <img--}}
-{{--              src={{$custom_logo_id}}--}}
-{{--              class="p-2"--}}
-{{--              alt="test logo"--}}
-{{--            />--}}
-{{--          </a>--}}
-{{--        </div>--}}
-{{--        <label for="menu-toggle" class="cursor-pointer lg:hidden block">--}}
-{{--          <svg--}}
-{{--            class="fill-current text-gray-900"--}}
-{{--            xmlns="http://www.w3.org/2000/svg"--}}
-{{--            width="20"--}}
-{{--            height="20"--}}
-{{--            viewBox="0 0 20 20"--}}
-{{--          >--}}
-{{--            <title>menu</title>--}}
-{{--            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>--}}
-{{--          </svg>--}}
-{{--        </label>--}}
-{{--        <input class="hidden" type="checkbox" id="menu-toggle" />--}}
-{{--        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">--}}
-{{--          <nav>--}}
-{{--            <ul class="text-xl text-center items-center gap-x-5 pt-4 md:gap-x-4 lg:text-lg lg:flex  lg:pt-0">--}}
-{{--              <li class="py-2 lg:py-0 ">--}}
-{{--                <a--}}
-{{--                  class="text-red-600 hover:pb-4 hover:border-b-4 hover:border-yellow-400"--}}
-{{--                  href="#"--}}
-{{--                >--}}
-{{--                  Blog--}}
-{{--                </a>--}}
-{{--              </li>--}}
-{{--              <li class="py-2 lg:py-0 ">--}}
-{{--                <a--}}
-{{--                  class="text-red-600 hover:pb-4 hover:border-b-4 hover:border-yellow-400"--}}
-{{--                  href="#"--}}
-{{--                >--}}
-{{--                  Projects--}}
-{{--                </a>--}}
-{{--              </li>--}}
-{{--              <li class="py-2 lg:py-0 ">--}}
-{{--                <a--}}
-{{--                  class="text-red-600 hover:pb-4 hover:border-b-4 hover:border-yellow-400"--}}
-{{--                  href="#"--}}
-{{--                >--}}
-{{--                  Apps--}}
-{{--                </a>--}}
-{{--              </li>--}}
-{{--              <li class="py-2 lg:py-0 ">--}}
-{{--                <a--}}
-{{--                  class="text-red-600 hover:pb-4 hover:border-b-4 hover:border-yellow-400"--}}
-{{--                  href="#"--}}
-{{--                >--}}
-{{--                  Designs--}}
-{{--                </a>--}}
-{{--              </li>--}}
-{{--              <li class="py-2 lg:py-0 ">--}}
-{{--                <a--}}
-{{--                  class="text-red-600 hover:pb-4 hover:border-b-4 hover:border-yellow-400"--}}
-{{--                  href="#"--}}
-{{--                >--}}
-{{--                  My Journey--}}
-{{--                </a>--}}
-{{--              </li>--}}
-{{--              <li class="py-2 lg:py-0 ">--}}
-{{--                <a--}}
-{{--                  class="text-red-600 hover:pb-4 hover:border-b-4 hover:border-yellow-400"--}}
-{{--                  href="#"--}}
-{{--                >--}}
-{{--                  About--}}
-{{--                </a>--}}
-{{--              </li>--}}
-{{--            </ul>--}}
-{{--          </nav>--}}
-{{--        </div>--}}
-{{--    </nav>--}}
-{{--  @endif--}}
 
 </header>
