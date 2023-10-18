@@ -45,7 +45,7 @@ const config = {
     ]
   },
   plugins: [
-    require('flowbite/plugin'),
+    import('flowbite/plugin.js'),
 
   ],
 };

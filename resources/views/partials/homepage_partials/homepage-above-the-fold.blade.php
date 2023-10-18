@@ -25,15 +25,16 @@
           <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign up</button>
         </div>
       </form>
-      <div class="flex justify-center items-center sm:py-4">
+
+      <div class="flex justify-center items-center py-4">
         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.994 19a8.999 8.999 0 1 1 3.53-17.281M5.995 9l4 4 7-8m-1 8v5m-2.5-2.5h5"/>
         </svg>
         <p class="text-sm font-normal text-gray-500 lg:text-md sm:pl-4 lg:pl-4 dark:text-gray-200"><?php echo esc_html( $above_the_fold_section['text_under_email_subscription'] ); ?></p>
       </div>
 
-    <div class="flex justify-center items-center sm:py-4">
-      <img src="<?php echo esc_url( $above_the_fold_section['certificate_image_1'] ); ?>" class="sm:pr-4" width="100px" />
+    <div class="flex justify-center items-center py-4">
+      <img src="<?php echo esc_url( $above_the_fold_section['certificate_image_1'] ); ?>" class="pr-4" width="100px" />
       <img src="<?php echo esc_url( $above_the_fold_section['certificate_image_2'] ); ?>" width="100px" />
     </div>
   </div>

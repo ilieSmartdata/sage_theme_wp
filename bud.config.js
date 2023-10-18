@@ -23,7 +23,7 @@ export default async (app) => {
    *
    * @see {@link https://bud.js.org/docs/bud.setPublicPath}
    */
-  app.setPublicPath('/app/themes/sage/public/');
+  app.setPublicPath('/app/themes/wordpress_sage_5/public/');
 
   /**
    * Development server settings
@@ -33,9 +33,11 @@ export default async (app) => {
    * @see {@link https://bud.js.org/docs/bud.watch}
    */
   app
-    .setUrl('http://localhost:10033/')
-    .setProxyUrl('http://example.test')
-    .watch(['resources/views', 'app']);
+    .setPublicPath("/wp-content/themes/wordpress_sage_5/public/")
+    // .setUrl('http://localhost:10036')
+    // .setProxyUrl('http://localhost:10036')
+    // .watch(['resources/views', 'app']);
+
 
   /**
    * Generate WordPress `theme.json`
