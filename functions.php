@@ -75,3 +75,15 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+function add_custom_new_menu() {
+  register_nav_menus(
+    array(
+      'footer-menu-1' => __( 'Footer Menu 1' ),
+      'footer-menu-2' => __( 'Footer Menu 2' )
+    )
+  );
+}
+add_action( 'init', 'add_custom_new_menu' );
+
+

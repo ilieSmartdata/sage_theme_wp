@@ -1,6 +1,6 @@
 
 
-<section class="bg-white dark:bg-gray-900 h-screen flex flex-col lg:flex-wrap md:flex-row">
+<section class="bg-white dark:bg-gray-900 flex flex-col lg:flex-wrap md:flex-row">
 
 <?php
 
@@ -18,13 +18,13 @@
             ?>
               <?php
                 if ($repeater_row_count % 2 == 0) { ?>
-                  <div class="h-screen w-full flex flex-col flex-wrap md:flex-row mb-12">
+                  <div class="md:h-screen w-full flex flex-col flex-wrap md:flex-row mb-12">
                       <div class="w-full md:w-3/5 h-60 md:h-screen bg-cover bg-center" style="background-image: url(<?php echo $image_value; ?>);"></div>
-                      <div class="w-full md:w-2/5 h-40 md:h-screen bg-white p-8"><?php echo $content_value; ?></div>
+                      <div class="flex flex-col justify-center w-full md:w-2/5 md:h-screen bg-white p-16 md:p-28"><?php echo $content_value; ?></div>
                   </div>
                 <?php } else { ?>
-                  <div class="h-screen w-full flex flex-col flex-wrap md:flex-row mb-12">
-                      <div class="w-full md:w-2/5 h-40 md:h-screen bg-white p-8"><?php echo $content_value; ?></div>
+                  <div class="md:h-screen w-full flex flex-col flex-wrap md:flex-row mb-12">
+                      <div class="flex flex-col justify-center w-full md:w-2/5 md:h-screen bg-white p-16 md:p-28"><?php echo $content_value; ?></div>
 
                       <div class="w-full md:w-3/5 h-60 md:h-screen bg-cover bg-center" style="background-image: url(<?php echo $image_value; ?>);"></div>
                   </div>
