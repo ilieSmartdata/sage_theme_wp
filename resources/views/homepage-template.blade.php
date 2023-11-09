@@ -9,6 +9,8 @@
 {{--  @include('partials.page-header')--}}
   @include('partials.homepage_partials.homepage-above-the-fold')
   @include('partials.homepage_partials.homepage-masonry-section')
+  @include('partials.homepage_partials.homepage-trusted-source-section')
+
 {{--    @include('partials.content')--}}
   @endwhile
 @endsection
