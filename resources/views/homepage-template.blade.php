@@ -11,6 +11,7 @@
   @include('partials.homepage_partials.homepage-masonry-section')
   @include('partials.homepage_partials.homepage-trusted-source-section')
   @include('partials.homepage_partials.homepage-pricing-section')
+  @include('partials.theme_partials.general-call-to-action')
 
 {{--    @include('partials.content')--}}
   @endwhile

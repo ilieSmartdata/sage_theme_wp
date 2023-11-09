@@ -24,7 +24,7 @@ if ( have_rows('above_the_fold_section') ):
   ?>
 
     <!-- Card Section -->
-  <card class="w-72 pricing-card my-6 md:my-0 md:mr-12 rounded-lg border shadow-md flex flex-col p-5 bg-white">
+  <card class="w-72 pricing-card my-6 md:my-0 md:mr-12 rounded-lg border shadow-md flex flex-col p-5 bg-white animate-fade animate-delay-300 animation-duration-1000 animate-once">
 
     <div class="flex flex-col items-center">
 

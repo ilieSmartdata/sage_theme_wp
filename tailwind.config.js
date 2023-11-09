@@ -46,6 +46,7 @@ const config = {
   },
   plugins: [
     import('flowbite/plugin.js'),
+    require('tailwindcss-animated'),
 
   ],
 };

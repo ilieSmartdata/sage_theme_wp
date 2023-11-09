@@ -9,3 +9,7 @@
 
 }
 /* END for Mobile rules */
+
+a.cta-btn:hover svg.cta-btn-arrow-right {
+  @apply animate-fade-right animate-once;
+}
