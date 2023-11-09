@@ -10,6 +10,7 @@
   @include('partials.homepage_partials.homepage-above-the-fold')
   @include('partials.homepage_partials.homepage-masonry-section')
   @include('partials.homepage_partials.homepage-trusted-source-section')
+  @include('partials.homepage_partials.homepage-pricing-section')
 
 {{--    @include('partials.content')--}}
   @endwhile

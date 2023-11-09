@@ -1,4 +1,5 @@
 @import "footer.css";
+@import "general.css";
 
 @tailwind base;
 @tailwind components;

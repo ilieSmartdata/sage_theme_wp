@@ -1,0 +1,11 @@
+
+
+/*CSS rules only for mobile*/
+@media only screen and (max-width: 600px) {
+
+  div.card-wrapper card.pricing-card:first-child {
+    @apply mt-12;
+  }
+
+}
+/* END for Mobile rules */
