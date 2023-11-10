@@ -14,7 +14,7 @@
 
 
 
-<section class="bg-center bg-no-repeat bg-[url('')] bg-gray-600 bg-blend-multiply" style="background-image: url(<?php echo esc_url( $above_the_fold_section['trusted_source_background'] ); ?>)">
+<section class="bg-center bg-no-repeat bg-gray-600 bg-blend-multiply" style="background-image: url(<?php echo esc_url( $above_the_fold_section['trusted_source_background'] ); ?>)">
   <div class="mx-auto max-w-screen-xl text-center py-24 lg:py-52">
 
 

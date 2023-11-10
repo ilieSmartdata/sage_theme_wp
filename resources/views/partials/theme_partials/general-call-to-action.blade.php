@@ -1,16 +1,19 @@
 
 
 <?php
+$group = acf_get_field_group('group_654cf573112eb'); // your field group key
+if ($group['active']) {
+
 $call_to_action_group = get_field('call_to_action_group', 'options');
 
     if ( have_rows('call_to_action_group', 'options') ):
     while( have_rows('call_to_action_group', 'options') ) : the_row();
 
-        $call_to_action_title = get_field('call_to_action_title', 'options');
-        $call_to_action_subtitle = get_field('call_to_action_subtitle', 'options');
+        $call_to_action_title = get_sub_field('call_to_action_title', 'options');
+        $call_to_action_subtitle = get_sub_field('call_to_action_subtitle', 'options');
 
     ?>
-        <section class="bg-gradient-to-b from-sky-50 to-blue-300 dark:bg-gray-900 ">
+        <section class="bg-gradient-to-b from-sky-50 to-blue-300 dark:bg-gray-900 py-24 lg:py-36">
           <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
             <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><?php echo $call_to_action_title; ?></h1>
             <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400"><?php echo $call_to_action_subtitle; ?></p>
@@ -29,4 +32,6 @@ $call_to_action_group = get_field('call_to_action_group', 'options');
 <?php
 endwhile;
 endif;
+}  // your field group key
 ?>
+

@@ -8,7 +8,7 @@ if ( have_rows('above_the_fold_section') ):
 ?>
 
   <!-- component -->
-<div class="sm:h-full card-wrapper lg:py-28 flex flex-col md:flex-row items-center justify-center">
+<section class="sm:h-full card-wrapper lg:py-28 flex flex-col md:flex-row items-center justify-center">
 
   <?php
 
@@ -81,7 +81,7 @@ if ( have_rows('above_the_fold_section') ):
       endif;
       ?>
 
-</div>
+</section>
 
 
 <?php
