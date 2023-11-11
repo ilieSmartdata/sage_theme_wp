@@ -1,7 +1,5 @@
 <article @php(post_class('h-entry ')) >
   <img class="mt-20 mb-4 lg:mx-auto post-thumbnail  w-full lg:w-1/2 h-400 lg:h-420 object-cover" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="post header image">
-{{--  <header class="mt-24 flex flex-row justify-center items-center post-thumbnail w-full max-w-full min-w-full h-400 lg:h-420 bg-center bg-no-repeat bg-cover" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">--}}
-
   <header class="flex flex-row justify-center items-center">
     <h1 class="my-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
       {!! $title !!}

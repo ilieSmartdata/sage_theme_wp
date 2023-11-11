@@ -1,7 +1,7 @@
 
 
 <?php
-$group = acf_get_field_group('group_654cf573112eb'); // your field group key
+$group = acf_get_field_group('group_654deb926289b'); // your field group key
 if ($group['active']) {
 
 $call_to_action_group = get_field('call_to_action_group', 'options');
