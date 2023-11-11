@@ -4,12 +4,12 @@ $above_the_fold_section = get_field('above_the_fold_section');
 
 if ( have_rows('above_the_fold_section') ):
   while( have_rows('above_the_fold_section') ) : the_row();
-
+        $endorsement_section_title = get_sub_field('endorsement_section_title');
   ?>
 
   <!-- component -->
 <section class="sm:h-full py-12 lg:pb-28">
-  <h2 class="mb-8 lg:mb-16 text-2xl font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-4xl text-center"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Supporting</span> Health and Wellness Professionals</h2>
+  <h2 class="mb-8 lg:mb-16 text-2xl font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-4xl text-center"><?php echo $endorsement_section_title; ?></h2>
 
     <div class="endorsement-wrapper flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4">
 <?php
@@ -23,7 +23,7 @@ if ( have_rows('above_the_fold_section') ):
         $customer_endorsement_image    = get_sub_field('customer_endorsement_image');
 
     ?>
-      <div class="w-5/6 lg:w-1/5 h-420 h-520 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover" style="background-image: url(<?php echo $customer_endorsement_image; ?>);">
+      <div class="w-5/6 lg:w-1/5 h-420 lg:h-520 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 bg-cover" style="background-image: url(<?php echo $customer_endorsement_image; ?>);">
         <div class="h-full flex flex-col justify-end bg-gradient-to-b from-transparent to-zinc-700 z-10">
           <div class="p-5">
             <h4 class="uppercase mb-2 text-base font-normal tracking-normal text-white dark:text-white"><?php echo $specialist_field; ?></h4>

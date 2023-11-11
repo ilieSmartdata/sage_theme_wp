@@ -7,25 +7,23 @@
     @apply mt-12;
   }
 
-  .h-420 {
-    height: 420px;
-  }
 
 }
 /* END for Mobile rules */
 
-a.cta-btn:hover svg.cta-btn-arrow-right {
-  @apply animate-fade-right animate-once;
-}
-
-
 /*CSS rules only for DESKTOP */
 @media only screen and (min-width: 1280px) {
 
-  .h-520 {
-    height: 520px;
-  }
 
 }
 /* END for DESKTOP rules */
+
+.main-endorse-title-style {
+@apply text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400;
+}
+
+
+a.cta-btn:hover svg.cta-btn-arrow-right {
+  @apply animate-fade-right animate-once;
+}
 
